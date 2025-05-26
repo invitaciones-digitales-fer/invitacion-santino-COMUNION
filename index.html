@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Invitación • Camila & Tomás</title>
+
+    <!-- ----- Google Fonts románticas ----- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Open Graph / WhatsApp preview -->
+    <meta property="og:title" content="¡Camila & Tomás se casan! 💍" />
+    <meta property="og:description"
+        content="Te invitamos a celebrar nuestro amor. Confirmá tu asistencia desde esta invitación digital." />
+    <meta property="og:image" content="https://TU-DOMINIO.com/assets/img/og-camila-tomas.jpg" />
+    <meta property="og:url" content="https://TU-DOMINIO.com/invitacion-camila-tomas/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon (opcional, lo generamos luego) -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+    <!-- ========= Overlay bienvenida ========= -->
+    <div id="welcome" class="welcome__overlay">
+        <div class="welcome__content">
+            <h1>💍 Bienvenido</h1>
+            <p>Estás invitado a la boda de Camila & Tomás</p>
+            <button id="enter-button">Entrar</button>
+        </div>
+    </div>
+
+    <!-- ========= Música de fondo ========= -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/Canon in D (Pachelbel's Canon).mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle" class="music__icon-reproductor" aria-label="Música"><img id="music-icon"
+            src="assets/icons/icono-musica_play.svg" alt="Play"></button>
+
+    <!-- ========= HERO ========= -->
+    <header class="hero">
+        <img src="assets/images/portada.jpg" alt="Camila y Tomás" class="hero__img">
+        <div class="hero__overlay">
+            <img src="/assets/images/logo_personal.png" alt="Logo Camila y Tomás" class="hero__logo">
+        </div>
+        <a href="#frase" class="hero__scroll-down" aria-label="Bajar"></a>
+    </header>
+
+    <!-- ========= FRASE ========= -->
+    <section class="frase" id="frase">
+        <div class="frase__container">
+            <img src="assets/icons/icono-frase.svg" alt="icon icono-corazon" class="frase__img">
+
+            <div class="frase__text">
+                <h4>LLEGÓ EL GRAN DÍA</h4>
+                <p>"Andábamos sin buscarnos, pero sabiendo que andábamos para encontrarnos."</p>
+                <br>
+                <p><i>Julio Cortázar</i></p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========= COUNTDOWN ========= -->
+    <section id="countdown" class="section">
+
+        <div id="clock" class="countdown__clock"></div>
+        <img src="assets/icons/icono-nuestraboda.svg" alt="icono-boda" class="countdown__img">
+        <div class="frase__text">
+            <h4>NUESTRA BODA</h4>
+        </div>
+
+    </section>
+
+    <!-- ========= CEREMONIA & FIESTA ========= -->
+    <section id="fiesta" class="section section__ceremonia">
+        <div class="fiesta__inner">
+            <h3 class="section__title section__title--fiesta">Ceremonia</h3>
+            <p>
+                Sábado 20 de Septiembre – 17:00 hs<br>
+                Iglesia del Carmen | Palermo
+            </p>
+            <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Cómo llegar</a>
+        </div>
+        <div class="fiesta__inner">
+            <h3 class="section__title section__title--fiesta">Festejo</h3>
+            <p>
+                Sábado 20 de Septiembre – 20:00 hs<br>
+                Salón Rosa | Palermo
+            </p>
+            <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Cómo llegar</a>
+        </div>
+    </section>
+
+    <!-- ========= RSVP ========= -->
+    <section id="rsvp" class="confirmar-asistencia">
+        <div class="rsvp__container">
+            <h4 class="section__title">RSPV</h4>
+            <div class="rspv__info">
+                <p>¡Contamos con tu presencia para celebrar juntos!🥂</p>
+                <a class="button button--primary" target="_blank"
+                    href="https://wa.me/54911XXXXXXXX?text=Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Camila%20y%20Tomás">¡Confirmanos
+                    tu asistencia!</a>
+            </div>
+            <img src="assets/icons/icono-calendar.svg" alt="icono-calendar" class="icono-img calendar">
+            <div class="rspv__calendario">
+                <p>¡Agendá la fecha en tu calendario!</p>
+                <div class="rsvp__dropdown">
+                    <button id="btnCalendar" class="button button--primary calendar-button">Agendar evento</button>
+                    <ul id="calendarMenu" class="dropdown__menu">
+                        <li><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20Camila%20y%20Tom%C3%A1s&dates=20250920T200000Z/20250921T030000Z&details=Ceremonia%20y%20fiesta&location=Palermo"
+                                target="_blank">Google Calendar</a></li>
+                        <li><a href="https://outlook.office.com/calendar/0/deeplink/compose?subject=Boda%20Camila%20y%20Tom%C3%A1s&body=Ceremonia%20%2B%20Fiesta&startdt=2025-09-20T17:00:00&enddt=2025-09-20T23:59:00&location=Palermo"
+                                target="_blank">Outlook Web</a></li>
+                        <li><a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda%20Camila%20y%20Tom%C3%A1s&body=Ceremonia%20%2B%20Fiesta&startdt=2025-09-20T17:00:00&enddt=2025-09-20T23:59:00&location=Palermo"
+                                target="_blank">Outlook Desktop</a></li>
+                        <li><a href="assets/ics/camila-tomas.ics">Apple / iCal</a></li>
+                        <li><a href="https://calendar.yahoo.com/?v=60&desc=Ceremonia%20y%20Fiesta&title=Boda%20Camila%20y%20Tom%C3%A1s&st=20250920T200000Z&dur=0400&in_loc=Palermo"
+                                target="_blank">Yahoo Calendar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <br>
+            <img src="assets/icons/icono-dresscode.svg" alt="icono-dresscode" class="icono-img dresscode">
+            <div class="dresscode__container">
+                <h4 class="section__title-dresscode">DRESS CODE:</h4>
+                <p class="dresscode__info">Formal elegante.
+                    <br>
+                    Nuestro casamiento será al aire libre, sugerimos no usar taco y llevar abrigo.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- ========= INSTAGRAM ========= -->
+    <section class="instagram">
+        <div class="instagram__container">
+            <img src="assets/icons/icono-instagram.svg" alt="icono-instagram" class="icono-img">
+            <br>
+            <div class="instagram__text">
+                <h4>
+                    <span class="hashtag">@CamilayTomas</span>
+                </h4>
+                <p>¡Preparate para nuestro casamiento!
+                    <br>
+                    Ya podés seguirnos en nuestra cuenta para ver todas las novedades del casamiento y etiquetarnos en
+                    tus fotos y videos.
+                </p>
+                <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Ver en
+                    Instagram</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= GALERÍA ========= -->
+    <section class="galeria section bg-light">
+        <div class="galeria__contenedor hidden">
+            <h4 class="galeria__title">NOSOTROS <br>♥</h4>
+            <p class="galeria__text">Cada historia de amor es diferente,¡pero la nuestra es única!</p>
+            <div class="galeria__grid">
+                <button class="gallery__item" type="button"><img src="assets/images/1.jpg" alt="Foto 1"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/2.jpg" alt="Foto 2"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/3.jpg" alt="Foto 3"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/4.jpg" alt="Foto 4"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/5.jpg" alt="Foto 5"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/6.jpg" alt="Foto 6"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/7.jpg" alt="Foto 7"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/8.jpg" alt="Foto 8"></button>
+            </div>
+            <!-- Modal de galería -->
+            <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog">
+                <button class="gallery-modal__close" aria-label="Cerrar">&times;</button>
+                <img class="gallery-modal__img" alt="">
+                <button class="gallery-modal__prev" aria-label="Anterior">&#10094;</button>
+                <button class="gallery-modal__next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= REGALOS ========= -->
+    <section id="regalos" class="cbu">
+        <div class="cbu__container">
+            <img src="assets/icons/icono-regalo.svg" alt="icono-regalo" class="icono-img">
+            <div class="cbu__text">
+                <p>
+                    ¡El mejor regalo es tu presencia!
+                    <br>
+                    Si deseas realizarnos un regalo...
+                </p>
+            </div>
+            <button id="btnGift">Ver más</button>
+        </div>
+    </section>
+
+    <!-- ========= MODAL REGALO ========= -->
+    <div id="modalRegalo" class="modal modal--regalo">
+        <div class="modal__dialog">
+            <span class="modal__close">&times;</span>
+            <span class="title__modal">Datos Bancarios</span>
+            <ul>
+                <li>Nombre del Titular: Nombre Apellido</li>
+                <li>CBU: 12345623561</li>
+                <li>Alias:</li>
+                <li>DNI: 32200552</li>
+                <li>Banco Galicia</li>
+            </ul>
+            <span class="title__modal">Lista de Regalos</span>
+            <ul>
+                <li><a href="#" target="_blank">Falabella Novios</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ========= PLAYLIST ========= -->
+    <section id="playlist" class="playlist">
+        <div class="playlist__card">
+            <h4 class="playlist__title">¡FIESTA!</h4>
+            <p class="playlist__text">¿Qué canciones no pueden faltar en la fiesta?
+                <br>
+                ¡Queremos crear una lista inolvidable!
+            </p>
+            <a class="button button--outline" target="_blank" href="https://tally.so/r/FORM-ID">Sugerir canción</a>
+
+        </div>
+    </section>
+
+    <!-- ================ALOJAMIENTOS================== -->
+    <section class="alojamientos">
+        <div class="alojamientos__container">
+            <h4 class="section__title info-util">INFO ÚTIL</h4>
+            <p>
+                Te dejamos sugerencias de alojamientos y traslados para que aproveches ese fin de semana al máximo.
+            </p>
+            <button id="btnAlojamientos" class="button button--outline">Ver más</button>
+        </div>
+    </section>
+
+    <!-- ========= MODAL ALOJAMIENTOS ========= -->
+    <div id="modalAlojamientos" class="modal modal--info">
+        <div class="modal__dialog">
+            <span class="modal__close">&times;</span>
+
+            <span class="title__modal">Hoteles</span>
+            <ul class="modal__list">
+                <li>
+                    <strong>Alojamiento 1</strong><br>
+                    Tel: 11-1234-5678 — Av. Siempre Viva 123<br>
+                    <a href="https://maps.app.goo.gl/aaa" target="_blank">Cómo llegar</a>
+                </li>
+                <li>
+                    <strong>Alojamiento 2</strong><br>
+                    Tel: 11-8765-4321 — Calle Falsa 456<br>
+                    <a href="https://maps.app.goo.gl/bbb" target="_blank">Cómo llegar</a>
+                </li>
+                <li>
+                    <strong>Alojamiento 3</strong><br>
+                    Tel: 11-1111-2222 — Pasaje Amor 789<br>
+                    <a href="https://maps.app.goo.gl/ccc" target="_blank">Cómo llegar</a>
+                </li>
+            </ul>
+
+            <span class="title__modal">Traslados</span>
+            <ul class="modal__list">
+                <li>
+                    <strong>Transporte 1</strong><br>
+                    WhatsApp: 11-7777-8888 — <a href="https://transporte1.com" target="_blank">Web</a>
+                </li>
+                <li>
+                    <strong>Transporte 2</strong><br>
+                    WhatsApp: 11-9999-0000 — <a href="https://transporte2.com" target="_blank">Web</a>
+                </li>
+                <li>
+                    <strong>Transporte 3</strong><br>
+                    WhatsApp: 11-2222-3333 — <a href="https://transporte3.com" target="_blank">Web</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ========= GRACIAS ========= -->
+    <section id="gracias" class="section__gracias">
+        <div id="glitter-container" class="gracias__glitter-container">
+            <p class="section__title section__title--gracias">
+                ♥
+                <br>
+                ¡Gracias por acompañarnos en este momento tan importante!
+            </p>
+        </div>
+    </section>
+
+    <!-- ========= Scripts ========= -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

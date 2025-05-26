@@ -1,0 +1,860 @@
+/* --------- Variables --------- */
+:root {
+    --font-body: 'Lora', sans-serif;
+    --font-title: 'Libre Baskerville', cursive;
+    --font-text: 'Montserrat', sans-serif;
+    --font-button: 'Merriweather', sans-serif;
+    /* gris suave para títulos */
+    --color-plate: #bbbbbb;
+    /* rosa pastel botones */
+    --color-primary: #ecddca;
+    /* acentos */
+    --color-ceremonia: #d28d66;
+    /*botones*/
+    --color-white: #fff;
+    --color-dark: #000;
+    --color-gris: #545b62;
+
+
+}
+
+/* --------- Reset --------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-white);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+h4 {
+    font-family: var(--font-title), serif;
+    letter-spacing: 10px;
+    color: #333333;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px;
+    line-height: 1.2;
+}
+
+p {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 17px;
+    color: #333333;
+    margin: 0 0 25px;
+
+}
+
+/* --------- Botones --------- */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: var(--font-text);
+    transition: .3s
+}
+
+
+.button--primary {
+    background: var(--color-ceremonia);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, 0.3);
+}
+
+
+.button--outline {
+    color: var(--color-white);
+    background-color: var(--color-ceremonia);
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.button:hover {
+    opacity: .55;
+    color: var(--color-plate);
+}
+
+.calendar-button{
+    background-color: var(--color-gris);
+   
+}
+
+
+
+/* ---------------Mensaje de bienvenida */
+#welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 235, 245, 0.8);
+    /* Rosa pastel traslúcido */
+    backdrop-filter: blur(5px);
+    /* 🔮 efecto blur */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.welcome__content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 56, 141, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 90vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#welcome h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#welcome button {
+    background: var(--color-white);
+    color: var(--color-primary);
+    border: 1px solid;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+#welcome button:hover {
+    background: var(--color-plate);
+}
+
+/* Animación para el overlay de bienvenida */
+#welcome {
+    transition: opacity 1s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --------- Secciones --------- */
+.section {
+    padding: 0px 15px;
+    text-align: center
+}
+
+.fiesta__inner {
+    padding: 0px 30px;
+}
+
+.section__title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+    margin-top: 1.5rem;
+
+
+}
+
+.section__title--fiesta {
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: var(--color-ceremonia);
+
+}
+
+.section__title--gracias {
+    font-size: 2.5rem;
+    padding: 0;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.section__ceremonia {
+    padding: 10px 0 100px;
+}
+
+/* Estilos iconos */
+.frase__img,
+.countdown__img {
+    width: 150px;
+    margin: 0 0 20px;
+}
+
+.icono-img {
+    width: 130px;
+}
+
+
+
+
+
+
+/* Botón de música */
+#music-toggle {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    background-color: var(--color-dark);
+    color: rgb(75, 96, 255);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0.5;
+    transition: transform 0.3s ease;
+    color: transparent;
+}
+
+#music-toggle:hover {
+    background-color: var(--color-plate);
+
+}
+
+
+
+#music-toggle:active {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.playing {
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --------- Scroll reveal --------- */
+.section.hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: .9s
+}
+
+.section.appear {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+
+
+
+
+
+/* --------- HERO --------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% center;
+
+
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0, 4)
+}
+
+.hero__overlay img {
+    width: 270px;
+    margin-top: 1rem;
+    opacity: 1;
+
+}
+
+/* --------- Animación fade-in con zoom suave para el logo --------- */
+.hero__logo {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInZoom 4s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+/* Flecha */
+.hero__scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    transform: translateX(-50%) rotate(45deg);
+    animation: arrow 2s infinite
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -10px) rotate(45deg)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0) rotate(45deg)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 10px) rotate(45deg)
+    }
+}
+
+
+/* Estilos section frase */
+.frase {
+    padding: 50px 0 70px;
+    background-color: var(--color-primary);
+
+}
+
+.frase__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.frase__text {
+    text-align: center;
+
+}
+
+/* --------- Countdown --------- */
+#clock {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Aumentamos el espacio entre los bloques */
+    margin-top: 0rem;
+    padding: 40px 0px 0px 0px;
+
+}
+
+#clock div {
+    padding: 1.2rem;
+    /* Aumentamos el padding para hacer el círculo más grande */
+    border-radius: 50%;
+    /* ¡Esto es clave para el círculo! */
+    width: 60px;
+    /* Ajusta el ancho para que el círculo se vea bien */
+    height: 60px;
+    /* Mismo valor que el ancho para un círculo perfecto */
+    display: flex;
+    /* Usamos flexbox para centrar el contenido dentro del círculo */
+    flex-direction: column;
+    /* Colocamos número y texto uno debajo del otro */
+    justify-content: center;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Centra horizontalmente */
+    border: 1px solid var(--color-plate);
+    /* Añadimos el borde delgado que se ve en la imagen */
+    box-sizing: border-box;
+    /* Asegura que el padding y border no aumenten el tamaño final */
+}
+
+#clock div span {
+    display: block;
+    font-size: 0.7rem;
+    /* Puedes ajustar si lo quieres un poco más grande o pequeño */
+    color: var(--color-plate);
+    /* Asumiendo que 'plate' es un gris claro o blanco */
+    text-transform: uppercase;
+    /* Para que las etiquetas estén en mayúsculas como en la imagen */
+    margin-top: 0.3rem;
+    /* Espacio entre el número y la etiqueta */
+}
+
+
+#clock div strong {
+    display: block;
+    font-size: 1.5rem;
+    /* Un poco más grande para el número */
+    font-weight: 600;
+    /* Puedes probar 700 o 600, el 700 es muy negrita */
+    color: var(--color-plate);
+    /* El mismo color para los números */
+    line-height: 1;
+    /* Ayuda a que el número no tenga un espacio excesivo arriba/abajo */
+
+}
+
+
+/*RSPV*/
+
+.confirmar-asistencia {
+    background-color: var(--color-primary);
+    padding: 70px 0 50px;
+
+}
+
+.rsvp__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rspv__info,
+.dresscode__info {
+    text-align: center;
+}
+
+.rspv__calendario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__title-dresscode {
+    margin: 0 0 25px;
+    text-align: center;
+}
+
+/* Dropdown calendario */
+.dropdown__menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    width: 200px;
+}
+
+.dropdown__menu li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--font-text);
+  font-size:15px;
+  color:#333;
+}
+
+.dropdown__menu img{width:20px;height:20px}
+.dropdown__menu a{color:inherit;text-decoration:none}
+.dropdown__menu a:hover{text-decoration:underline}
+
+/* ---------- Cerrar galería clic en fondo ---------- */
+.gallery-modal{cursor:pointer}
+.gallery-modal__img,
+.gallery-modal__close,
+.gallery-modal__prev,
+.gallery-modal__next{pointer-events:auto} /* la foto y los botones siguen clicables */
+
+
+/* <!-- ========= INSTAGRAM ========= --> */
+.instagram {
+    text-align: center;
+    padding: 60px 0px 80px 0px;
+}
+
+.instagram__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.hashtag {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.instagram__text p {
+    margin: 0 0 16px;
+    padding: 20px 0 0;
+
+}
+
+/* <!-- ========= GALERÍA ========= --> */
+
+.galeria {
+    padding: 20px 20px 70px 20px;
+    text-align: center;
+}
+
+.galeria__title {
+    font-family: var(--font-title);
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: var(--color-dark);
+}
+
+.galeria__text {
+    font-family: var(--font-text);
+    font-size: 17px;
+    margin: 0 0 16px;
+    padding: 0 0 30px;
+}
+
+.galeria__contenedor {
+    padding: 0;
+
+}
+
+.galeria__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-inline: auto;
+
+}
+
+.galeria__imagen {
+    width: 134px;
+    height: 134px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    padding: 0 3px;
+    margin-bottom: 5px;
+}
+
+.galeria__imagen:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Modal galería ---------- */
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, .6);
+    z-index: 1000;
+}
+
+.gallery-modal--active {
+    display: flex;
+}
+
+.gallery-modal__img {
+    max-width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: .5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .4);
+}
+
+.gallery-modal__close,
+.gallery-modal__prev,
+.gallery-modal__next {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-modal__close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.gallery-modal__prev {
+    left: 1rem;
+}
+
+.gallery-modal__next {
+    right: 1rem;
+}
+
+.gallery__item img {
+    width: 134px;
+    height: 134px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    padding: 0 3px;
+    margin-bottom: 5px;
+}
+
+.gallery__item img:hover {
+    transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    .gallery-modal__img {
+        animation: zoom .4s ease;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(.8);
+            opacity: .3
+        }
+    }
+}
+
+
+/* <!-- ========= REGALOS ========= --> */
+
+.cbu {
+    background-color: var(--color-primary);
+    padding: 80px 0;
+
+}
+
+.cbu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cbu__text {
+    margin: 0 0 5px;
+}
+
+#btnGift {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    ;
+    border: 1px solid var(--color-white);
+    color: var(--color-dark);
+    font-size: 16px;
+    font-family: var(--font-text);
+}
+
+
+/* --------- Modal --------- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgb(214, 152, 117, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    padding: 6px;
+}
+
+.modal a {
+    color: var(--color-ceremonia);
+}
+
+
+.modal__dialog {
+    background: #fff;
+    color: #000;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 90%;
+    position: relative;
+    font-size: 17px;
+    text-align: center
+}
+
+.title__modal {
+    color: var(--color-ceremonia);
+    text-align: center;
+    font-family: var(--font-text);
+    font-size: 25px;
+
+
+}
+
+.modal__dialog p {
+    text-align: center;
+    font-size: 1.3rem;
+
+}
+
+.modal__dialog .modal__close {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 1.6rem;
+    cursor: pointer
+}
+
+.modal__dialog li {
+    font-size: 17px;
+    font-family: var(--font-text);
+    list-style: none;
+}
+
+
+/* === PLAYLIST SECTION (fondo + overlay) === */
+.playlist {
+    align-items: center;
+    background-image: url('canciones.jpg');
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist__card {
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    padding-bottom: 40px;
+    width: 85%;
+}
+
+.playlist__title {
+    font-family: var(--font-title);
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin: 20px 0 20px 0;
+    color: #333333;
+}
+
+.playlist__text {
+    font-family: var(--font-text);
+    font-size: 17px;
+    color: #333333;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --------------ALOJAMIENTOS--------------------- */
+
+.alojamientos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-ceremonia);
+    padding: 80px 0 80px;
+}
+
+.info-util {
+    color: var(--color-white);
+}
+
+.alojamientos p {
+    color: var(--color-white);
+}
+
+.alojamientos__container {
+    padding: 0 15px;
+    font-size: 17px;
+}
+
+
+
+
+/* --------- Gracias --------- */
+
+
+.section__gracias {
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: 70px 0;
+
+}
+
+.section__title--gracias {
+    font-size: 17px;
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
+
+.gracias__glitter-container {
+    padding: 0 15px;
+}
+
+
+/* ==============MEDIA QUERIES============== */
+@media (min-width: 768px) {
+    .galeria__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .galeria__imagen {
+        width: 100%;
+        /* ocupa la celda */
+        height: auto;
+        /* ajusta si querés mantener proporción */
+        aspect-ratio: 1/1;
+        /* mantiene forma cuadrada */
+    }
+}
