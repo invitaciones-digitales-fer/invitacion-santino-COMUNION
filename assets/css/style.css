@@ -25,7 +25,6 @@
     padding: 0
 }
 
-
 body {
     font-family: var(--font-body);
     color: var(--color-white);
@@ -62,14 +61,12 @@ p {
     transition: .3s
 }
 
-
 .button--primary {
     background: var(--color-ceremonia);
     color: var(--color-white);
     font-size: 1.2rem;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, 0.3);
 }
-
 
 .button--outline {
     color: var(--color-white);
@@ -87,8 +84,6 @@ p {
     background-color: var(--color-gris);
    
 }
-
-
 
 /* ---------------Mensaje de bienvenida */
 #welcome {
@@ -127,8 +122,8 @@ p {
 
 #welcome button {
     background: var(--color-white);
-    color: var(--color-primary);
-    border: 1px solid;
+    color: var(--color-dark);
+    border: none;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     border-radius: 2rem;
@@ -185,7 +180,6 @@ p {
     margin-bottom: 1rem;
 }
 
-
 .section__ceremonia {
     padding: 10px 0 100px;
 }
@@ -200,11 +194,6 @@ p {
 .icono-img {
     width: 130px;
 }
-
-
-
-
-
 
 /* Botón de música */
 #music-toggle {
@@ -267,6 +256,27 @@ p {
     transform: translateY(0)
 }
 
+/* ---------- Fade-in desde arriba (scroll-triggered) ---------- */
+.fade-down {
+    opacity: 0;
+    transform: translateY(-40px); /* Parte 40px arriba */
+}
+
+.fade-down.appear {
+    animation: fadeInDown 1.2s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
@@ -299,18 +309,19 @@ p {
 }
 
 .hero__overlay img {
-    width: 270px;
+    width: 300px;
     margin-top: 1rem;
     opacity: 1;
 
 }
-
-/* --------- Animación fade-in con zoom suave para el logo --------- */
-.hero__logo {
+/* ---------- Reutilizable: fade-in + zoom ---------- */
+.fade-zoom {
     opacity: 0;
     transform: scale(0.95);
-    animation: fadeInZoom 4s ease-out forwards;
-    animation-delay: 1s;
+}
+
+.fade-zoom.appear {
+    animation: fadeInZoom 2.5s ease-out forwards;
 }
 
 @keyframes fadeInZoom {
@@ -318,12 +329,12 @@ p {
         opacity: 0;
         transform: scale(0.95);
     }
-
     100% {
         opacity: 1;
         transform: scale(1);
     }
 }
+
 
 
 
@@ -844,6 +855,11 @@ p {
 
 /* ==============MEDIA QUERIES============== */
 @media (min-width: 768px) {
+    .welcome__content{
+      width: 60%;
+    }
+
+
     .galeria__grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
@@ -858,3 +874,12 @@ p {
         /* mantiene forma cuadrada */
     }
 }
+@media (min-width: 1024px) {
+    .welcome__content{
+      width: 40%;
+    }}
+
+    @media (min-width: 1440px) {
+    .welcome__content{
+      width: 30%;
+    }}

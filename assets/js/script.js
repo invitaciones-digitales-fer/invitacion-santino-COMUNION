@@ -29,37 +29,25 @@ btnGift.onclick = () => modal.style.display = 'flex';
 close.onclick = () => modal.style.display = 'none';
 window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
 
-/* ====== Scroll reveal ====== */
-const obs = new IntersectionObserver(
-  entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('appear');
-        obs.unobserve(e.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll('.section').forEach(sec => {
-  sec.classList.add('hidden');
-  obs.observe(sec);
-});
-
-// Scroll reveal para .hidden
-const revealElements = document.querySelectorAll('.section, .hidden');
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  revealElements.forEach(el => {
-    const boxTop = el.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      el.classList.add('appear');
+/* ====== Scroll reveal para .fade-zoom ====== */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
     }
   });
-};
+}, { threshold: 0.2 });
 
-window.addEventListener('scroll', revealOnScroll);
+document.querySelectorAll('.fade-zoom').forEach(el => {
+  observer.observe(el);
+});
+document.querySelectorAll('.fade-zoom, .fade-down').forEach(el => {
+  observer.observe(el);
+});
+
+
+
 
 // ======= const music = document.getElementById('bg-music');
 const music = document.getElementById('bg-music');
