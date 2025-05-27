@@ -37,6 +37,9 @@
 
     <!-- Favicon (opcional, lo generamos luego) -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- biblioteca de iconos -->
+
 </head>
 
 <body>
@@ -46,7 +49,7 @@
         <div class="welcome__content">
             <h1>Bienvenido</h1>
             <p>Estás invitado a la boda de Camila & Tomás <br>👰🤵</p>
-            <button id="enter-button" class="button button--outline">Entrar</button>
+            <button id="enter-button" class="button button--outline button--hover">Entrar</button>
         </div>
     </div>
 
@@ -87,7 +90,7 @@
         <div id="clock" class="countdown__clock"></div>
         <img src="assets/icons/icono-nuestraboda.svg" alt="icono-boda" class="countdown__img  fade-zoom">
         <div class="frase__text">
-            <h4  class="fade-zoom">NUESTRA BODA</h4>
+            <h4 class="fade-zoom">NUESTRA BODA</h4>
         </div>
 
     </section>
@@ -100,7 +103,8 @@
                 Sábado 20 de Septiembre – 17:00 hs<br>
                 Iglesia del Carmen | Palermo
             </p>
-            <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Cómo llegar</a>
+            <a class="button button--primary button--hover" target="_blank" href="https://maps.app.goo.gl/kdgQZJ7jHJBeDgxV6">Cómo
+                llegar</a>
         </div>
         <div class="fiesta__inner fade-down">
             <h3 class="section__title section__title--fiesta">Festejo</h3>
@@ -108,41 +112,62 @@
                 Sábado 20 de Septiembre – 20:00 hs<br>
                 Salón Rosa | Palermo
             </p>
-            <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Cómo llegar</a>
+            <a class="button button--primary button--hover" target="_blank" href="https://maps.app.goo.gl/bnKoFgJ8cQ3zs9Vm6">Cómo
+                llegar</a>
         </div>
     </section>
 
     <!-- ========= RSVP ========= -->
     <section id="rsvp" class="confirmar-asistencia">
         <div class="rsvp__container">
-            <h4 class="section__title  fade-zoom">RSPV</h4>
+            <h4 class="section__title section__title-rspv fade-zoom">RSPV</h4>
             <div class="rspv__info fade-down">
-                <p>¡Contamos con tu presencia para celebrar juntos!🥂</p>
-                <a class="button button--primary" target="_blank"
-                    href="https://wa.me/54911XXXXXXXX?text=Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Camila%20y%20Tomás">¡Confirmanos
-                    tu asistencia!</a>
+                <p>Esperamos que puedas acompañarnos. ¡Confirmanos tu asistencia!</p>
+                <a class="button button--primary button--hover" target="_blank"
+                    href="https://forms.gle/rXmm24d7sacwsgb39">Confirmar asistencia</a>
             </div>
-            <img src="assets/icons/icono-calendar.svg" alt="icono-calendar" class="icono-img calendar  fade-zoom">
+            <img src="assets/icons/icono-calendar.svg" alt="icono-calendar" class="icono-img-primary calendar  fade-zoom">
             <div class="rspv__calendario fade-down">
                 <p>¡Agendá la fecha en tu calendario!</p>
                 <div class="rsvp__dropdown">
                     <button id="btnCalendar" class="button button--primary calendar-button">Agendar evento</button>
                     <ul id="calendarMenu" class="dropdown__menu">
-                        <li><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20Camila%20y%20Tom%C3%A1s&dates=20250920T200000Z/20250921T030000Z&details=Ceremonia%20y%20fiesta&location=Palermo"
-                                target="_blank">Google Calendar</a></li>
-                        <li><a href="https://outlook.office.com/calendar/0/deeplink/compose?subject=Boda%20Camila%20y%20Tom%C3%A1s&body=Ceremonia%20%2B%20Fiesta&startdt=2025-09-20T17:00:00&enddt=2025-09-20T23:59:00&location=Palermo"
-                                target="_blank">Outlook Web</a></li>
-                        <li><a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda%20Camila%20y%20Tom%C3%A1s&body=Ceremonia%20%2B%20Fiesta&startdt=2025-09-20T17:00:00&enddt=2025-09-20T23:59:00&location=Palermo"
-                                target="_blank">Outlook Desktop</a></li>
-                        <li><a href="assets/ics/camila-tomas.ics">Apple / iCal</a></li>
-                        <li><a href="https://calendar.yahoo.com/?v=60&desc=Ceremonia%20y%20Fiesta&title=Boda%20Camila%20y%20Tom%C3%A1s&st=20250920T200000Z&dur=0400&in_loc=Palermo"
-                                target="_blank">Yahoo Calendar</a></li>
+                        <li>
+                            <a href="https://calendar.google.com/calendar/render?...">
+                                <img src="assets/icons/google-calendar-icon.svg" alt="" class="calendar__icon">
+                                Google Calendar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://outlook.office.com/calendar/...">
+                                <img src="assets/icons/microsoft-outlook-icon.svg" alt="" class="calendar__icon">
+                                Outlook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://outlook.live.com/calendar/...">
+                                <img src="assets/icons/office-365-icon.svg" alt="" class="calendar__icon">
+                                Microsoft 365
+                            </a>
+                        </li>
+                        <li>
+                            <a href="assets/ics/camila-tomas.ics">
+                                <img src="assets/icons/Apple_logo_black.svg" alt="" class="calendar__icon">
+                                Apple
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://calendar.yahoo.com/?...">
+                                <img src="assets/icons/yahoo-icon.svg" alt="" class="calendar__icon">
+                                Yahoo
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
             </div>
             <br>
-            <img src="assets/icons/icono-dresscode.svg" alt="icono-dresscode" class="icono-img dresscode  fade-zoom">
+            <img src="assets/icons/icono-dresscode.svg" alt="icono-dresscode" class="icono-img-primary dresscode  fade-zoom">
             <div class="dresscode__container fade-down">
                 <h4 class="section__title-dresscode">DRESS CODE:</h4>
                 <p class="dresscode__info">Formal elegante.
@@ -156,7 +181,7 @@
     <section class="instagram">
         <div class="instagram__container">
             <img src="assets/icons/icono-instagram.svg" alt="icono-instagram" class="icono-img  fade-zoom">
-            <br>
+            
             <div class="instagram__text fade-down">
                 <h4>
                     <span class="hashtag">@CamilayTomas</span>
@@ -166,7 +191,7 @@
                     Ya podés seguirnos en nuestra cuenta para ver todas las novedades del casamiento y etiquetarnos en
                     tus fotos y videos.
                 </p>
-                <a class="button button--primary" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Ver en
+                <a class="button button--primary button--hover" target="_blank" href="https://maps.app.goo.gl/xxxxxxxx">Ver en
                     Instagram</a>
 
             </div>
@@ -209,14 +234,14 @@
                     Si deseas realizarnos un regalo...
                 </p>
             </div>
-            <button id="btnGift">Ver más</button>
+            <button id="btnGift" class="button--hover">Ver más</button>
         </div>
     </section>
 
     <!-- ========= MODAL REGALO ========= -->
     <div id="modalRegalo" class="modal modal--regalo">
-        <div class="modal__dialog">
-            <span class="modal__close">&times;</span>
+        <div class="modal__dialog banco">
+            <span class="modal__close button--hover">&times;</span>
             <span class="title__modal">Datos Bancarios</span>
             <ul>
                 <li>Nombre del Titular: Nombre Apellido</li>
@@ -241,7 +266,7 @@
                 <br>
                 ¡Queremos crear una lista inolvidable!
             </p>
-            <a class="button button--outline" target="_blank" href="https://tally.so/r/FORM-ID">Sugerir canción</a>
+            <a class="button button--outline button--hover" target="_blank" href="https://forms.gle/fV4XXE9pPn51y9en8">Sugerir canción</a>
 
         </div>
     </section>
@@ -253,7 +278,7 @@
             <p>
                 Te dejamos sugerencias de alojamientos y traslados para que aproveches ese fin de semana al máximo.
             </p>
-            <button id="btnAlojamientos" class="button button--outline">Ver más</button>
+            <button id="btnAlojamientos" class="button button--outline button--hover button--info">Ver más</button>
         </div>
     </section>
 
@@ -285,15 +310,15 @@
             <ul class="modal__list">
                 <li>
                     <strong>Transporte 1</strong><br>
-                    WhatsApp: 11-7777-8888 — <a href="https://transporte1.com" target="_blank">Web</a>
+                    WhatsApp: 11-7777-8888<a href="https://transporte1.com" target="_blank"><br>Web</a>
                 </li>
                 <li>
                     <strong>Transporte 2</strong><br>
-                    WhatsApp: 11-9999-0000 — <a href="https://transporte2.com" target="_blank">Web</a>
+                    WhatsApp: 11-9999-0000<a href="https://transporte2.com" target="_blank"><br>Web</a>
                 </li>
                 <li>
                     <strong>Transporte 3</strong><br>
-                    WhatsApp: 11-2222-3333 — <a href="https://transporte3.com" target="_blank">Web</a>
+                    WhatsApp: 11-2222-3333<a href="https://transporte3.com" target="_blank"><br>Web</a>
                 </li>
             </ul>
         </div>

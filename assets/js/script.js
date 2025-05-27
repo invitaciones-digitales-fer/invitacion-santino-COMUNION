@@ -59,14 +59,19 @@ let isPlaying = false;
 
 // Cambia la imagen del ícono según el estado
 function updateMusicIcon() {
+  toggle.classList.remove('playing', 'pulsing'); // limpia ambas
+
   if (isPlaying) {
     toggleIcon.src = 'assets/icons/icono-musica_stop.svg';
     toggleIcon.alt = 'Pause';
+    toggle.classList.add('playing'); // 🎵 animación de salto
   } else {
     toggleIcon.src = 'assets/icons/icono-musica_play.svg';
     toggleIcon.alt = 'Play';
+    toggle.classList.add('pulsing'); // ⏸️ animación de pulso suave
   }
 }
+
 
 // Al hacer clic en "Entrar"
 enterBtn.addEventListener('click', () => {
@@ -106,15 +111,19 @@ toggle.addEventListener('click', () => {
   }
 });
 
+// ===========boton calendario============
+
+
+
 /* ====== Galería modal ====== */
 /* -------------- GALERÍA -------------- */
-const galleryItems   = document.querySelectorAll('.gallery__item');
-const galleryModal   = document.getElementById('galleryModal');
+const galleryItems = document.querySelectorAll('.gallery__item');
+const galleryModal = document.getElementById('galleryModal');
 if (galleryItems.length && galleryModal) {
-  const galleryImg   = galleryModal.querySelector('.gallery-modal__img');
-  const btnCloseGal  = galleryModal.querySelector('.gallery-modal__close');
-  const btnPrev      = galleryModal.querySelector('.gallery-modal__prev');
-  const btnNext      = galleryModal.querySelector('.gallery-modal__next');
+  const galleryImg = galleryModal.querySelector('.gallery-modal__img');
+  const btnCloseGal = galleryModal.querySelector('.gallery-modal__close');
+  const btnPrev = galleryModal.querySelector('.gallery-modal__prev');
+  const btnNext = galleryModal.querySelector('.gallery-modal__next');
 
   let current = 0;
 
@@ -135,40 +144,48 @@ if (galleryItems.length && galleryModal) {
     document.body.style.overflow = '';
   };
 
-  galleryItems.forEach((btn,i)=>btn.addEventListener('click',()=>openGal(i)));
-  btnCloseGal.addEventListener('click',closeGal);
-  btnPrev.addEventListener('click',()=>{current=(current-1+galleryItems.length)%galleryItems.length;updateImg();});
-  btnNext.addEventListener('click',()=>{current=(current+1)%galleryItems.length;updateImg();});
+  galleryItems.forEach((btn, i) => btn.addEventListener('click', () => openGal(i)));
+  btnCloseGal.addEventListener('click', closeGal);
+  btnPrev.addEventListener('click', () => { current = (current - 1 + galleryItems.length) % galleryItems.length; updateImg(); });
+  btnNext.addEventListener('click', () => { current = (current + 1) % galleryItems.length; updateImg(); });
 
   /* cerrar con ESC o clic fuera */
-  window.addEventListener('keydown',e=>{
-    if(!galleryModal.classList.contains('gallery-modal--active')) return;
-    if(e.key==='Escape') closeGal();
-    if(e.key==='ArrowLeft')  btnPrev.click();
-    if(e.key==='ArrowRight') btnNext.click();
+  window.addEventListener('keydown', e => {
+    if (!galleryModal.classList.contains('gallery-modal--active')) return;
+    if (e.key === 'Escape') closeGal();
+    if (e.key === 'ArrowLeft') btnPrev.click();
+    if (e.key === 'ArrowRight') btnNext.click();
   });
-  galleryModal.addEventListener('click',e=>{
-    if(e.target===galleryModal) closeGal();
+  galleryModal.addEventListener('click', e => {
+    if (e.target === galleryModal) closeGal();
   });
 }
 
 /* -------------- DROPDOWN CALENDARIO -------------- */
-const btnCalendar  = document.getElementById('btnCalendar');
+const btnCalendar = document.getElementById('btnCalendar');
 const calendarMenu = document.getElementById('calendarMenu');
+
 if (btnCalendar && calendarMenu) {
-  btnCalendar.addEventListener('click',()=>{
-    calendarMenu.style.display = calendarMenu.style.display==='flex' ? 'none' : 'flex';
+  btnCalendar.addEventListener('click', () => {
+    const isOpen = calendarMenu.style.display === 'flex';
+
+    // Toggle display
+    calendarMenu.style.display = isOpen ? 'none' : 'flex';
+
+    // Toggle class to change style
+    btnCalendar.classList.toggle('open', !isOpen);
   });
 }
+
 
 /* -------------- MODAL ALOJAMIENTOS -------------- */
 const btnAloja = document.getElementById('btnAlojamientos');
 const modalAlo = document.getElementById('modalAlojamientos');
 if (btnAloja && modalAlo) {
   const closeAlo = modalAlo.querySelector('.modal__close');
-  btnAloja.onclick  = ()=> modalAlo.style.display='flex';
-  closeAlo.onclick  = ()=> modalAlo.style.display='none';
-  window.addEventListener('click',e=>{ if(e.target===modalAlo) modalAlo.style.display='none'; });
+  btnAloja.onclick = () => modalAlo.style.display = 'flex';
+  closeAlo.onclick = () => modalAlo.style.display = 'none';
+  window.addEventListener('click', e => { if (e.target === modalAlo) modalAlo.style.display = 'none'; });
 }
 
 
