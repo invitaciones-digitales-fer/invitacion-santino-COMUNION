@@ -111,7 +111,16 @@ toggle.addEventListener('click', () => {
   }
 });
 
-// ===========boton calendario============
+document.querySelectorAll('.pause-music').forEach(link => {
+  link.addEventListener('click', () => {
+    if (!music.paused) {
+      music.pause();
+      isPlaying = false;
+      updateMusicIcon();
+    }
+  });
+});
+
 
 
 
