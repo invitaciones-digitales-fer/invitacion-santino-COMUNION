@@ -4,7 +4,7 @@ This is a fully custom digital wedding invitation designed and developed for the
 
 ## 📱 Live Demo
 
-👉 [Visit the Invitation](https://invitaciones-digitales-fer.github.io/invitacion-camila-tomas/) *(replace with your link)*
+👉 [Visit the Invitation](https://invitaciones-digitales-fer.github.io/invitacion-camila-tomas/) 
 
 ---
 
