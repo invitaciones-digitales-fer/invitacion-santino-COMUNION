@@ -6,7 +6,10 @@ This is a fully custom digital wedding invitation designed and developed for the
 
 👉 [Visit the Invitation](https://invitaciones-digitales-fer.github.io/invitacion-camila-tomas/) 
 
----
+## 📸 Screenshot
+
+![Desktop Design Screenshot](/DESKTOP%20invitaciones-digitales-fer.github.io_invitacion-camila-tomas_.png)
+![mobile Design Screenshot](/MOBILE%20-%20invitaciones-digitales-fer.github.io_invitacion-camila-tomas_.png)
 
 ## 🎨 Features
 
@@ -47,3 +50,10 @@ This is a fully custom digital wedding invitation designed and developed for the
 │   ├── icons/
 │   ├── music/
 │   └── ics/
+
+
+## Author
+
+- GitHub – [@fernandopizarrodw](https://github.com/fernandopizarrodw)
+- Frontend Mentor – [@fernandopizarrodw](https://www.frontendmentor.io/profile/fernandopizarrodw)
+- LinkedIn – [Fernando Pizarro](https://www.linkedin.com/in/fernandopizarro-dev/)
