@@ -13,7 +13,7 @@
   --color-plate: #b6b1aa;
 
   /* Fondo claro pastel: reemplazo del rosa default */
-  --color-primary: #fdf7f2;
+  --color-primary: #ded7d1;
 
   /* Color acento elegante (usado para botones, títulos, íconos clave) */
   --color-ceremonia: #c68f77c7;
@@ -849,9 +849,9 @@ p {
     padding: 10px 20px;
     font-size: 1.3rem;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(193, 192, 192, 0.825);
     ;
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-ceremonia);
     color: var(--color-dark);
     font-size: 16px;
     font-family: var(--font-text);
