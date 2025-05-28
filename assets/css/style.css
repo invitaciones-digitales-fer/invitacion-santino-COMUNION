@@ -1,22 +1,32 @@
 /* --------- Variables --------- */
 :root {
+
+    /* ==========FUENTES============ */
     --font-body: 'Lora', sans-serif;
     --font-title: 'Libre Baskerville', cursive;
     --font-text: 'Montserrat', sans-serif;
     --font-button: 'Merriweather', sans-serif;
-    /* gris suave para títulos */
-    --color-plate: #bbbbbb;
-    /* rosa pastel botones */
-    --color-primary: #ecddca;
-    /* acentos */
-    --color-ceremonia: #d28d66;
-    /*botones*/
-    --color-white: #fff;
-    --color-dark: #000;
-    --color-gris: #545b62;
-    --color-blue: #027cff;
 
+/* ========== COLORES ============= */
 
+  /* Gris cálido suave para textos y detalles */
+  --color-plate: #b6b1aa;
+
+  /* Fondo claro pastel: reemplazo del rosa default */
+  --color-primary: #fdf7f2;
+
+  /* Color acento elegante (usado para botones, títulos, íconos clave) */
+  --color-ceremonia: #c68f77c7;
+
+  /* Blanco y negro clásicos */
+  --color-white: #ffffff;
+  --color-dark: #121212;
+
+  /* Gris neutro para textos secundarios y hover */
+  --color-gris: #545b62;
+
+  /* Azul oscuro solo para links visibles (opcional) */
+  --color-blue: #3a6fa6;
 }
 
 /* --------- Reset --------- */
@@ -549,6 +559,10 @@ p {
     width: 120px;
 }
 
+.rspv__info {
+    margin-bottom: 35px;
+}
+
 .rspv__calendario {
     display: flex;
     flex-direction: column;
@@ -625,6 +639,7 @@ p {
 
 .calendar-button {
     transition: all 0.3s ease;
+    border: none;
 }
 
 .calendar-button::after {
@@ -842,6 +857,11 @@ p {
     font-family: var(--font-text);
 }
 
+.diary {
+     width: 40px;
+     margin: 20px;
+}
+
 
 /* --------- Modal --------- */
 .modal {
@@ -949,6 +969,8 @@ p {
     margin-top: 0;
     margin-bottom: 20px;
 }
+
+
 
 /* --------------ALOJAMIENTOS--------------------- */
 
