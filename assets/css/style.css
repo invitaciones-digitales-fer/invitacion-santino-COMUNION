@@ -193,21 +193,36 @@ p {
 
 .section__title-rspv {
     margin: 0 0 25px;
+    text-align: center;
 }
 
 /* Estilos iconos */
-.frase__img,
+
 .countdown__img {
-    width: 150px;
+    width: 100px;
+    margin: 20px 0 20px;
+}
+
+.frase__img{
+    width: 100px;
     margin: 0 0 20px;
 }
 
 .icono-img {
-    width: 150px;
+    width: 100px;
 }
 
 .icono-img-primary {
-    width: 130px;
+    width: 90px;
+}
+
+.camera {
+    margin-bottom: 35px;
+}
+
+.gift {
+    width: 90px;
+    margin-bottom: 30px;
 }
 
 /* Botón de música */
@@ -530,6 +545,9 @@ p {
 .dresscode__info {
     text-align: center;
 }
+.dresscode{
+    width: 120px;
+}
 
 .rspv__calendario {
     display: flex;
@@ -574,7 +592,7 @@ p {
 .dropdown__menu a {
     color: inherit;
     text-decoration: none;
-    
+
 }
 
 .dropdown__menu a:hover {
@@ -796,7 +814,7 @@ p {
 
 .cbu {
     background-color: var(--color-primary);
-    padding: 80px 0;
+    padding: 70px 0;
 
 }
 
@@ -809,6 +827,7 @@ p {
 
 .cbu__text {
     margin: 0 0 5px;
+    text-align: center;
 }
 
 #btnGift {
@@ -915,7 +934,7 @@ p {
 
 .playlist__title {
     font-family: var(--font-title);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 10px;
     margin: 20px 0 20px 0;
@@ -1039,12 +1058,17 @@ p {
 
     .section__ceremonia {
         display: flex;
-    } 
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 
     .fiesta__inner {
-    padding: 0px 30px;
-    margin: 0;
-}
+        padding: 0;
+    }
+
 
     .instagram__text p {
         width: 690px;
@@ -1057,6 +1081,10 @@ p {
     .modal__dialog {
         width: 50%;
     }
+
+    .section__title--fiesta{
+        width: 420px;
+    }
 }
 
 
@@ -1066,22 +1094,24 @@ p {
     }
 
     #clock div {
-        width: 141px;
-        height: 141px;
+        width: 130px;
+        height: 130px;
     }
 
     #clock div span {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
 
     }
+
     #clock div strong {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .modal__dialog {
         width: 60%;
-        
+
     }
+
     .title__modal {
         font-size: 35px;
     }
@@ -1089,6 +1119,12 @@ p {
     .modal__dialog li {
         font-size: 1.7rem;
     }
+
+    .fiesta__inner {
+        padding: 15px;
+    }
+
+
 
 
 }
@@ -1099,17 +1135,17 @@ p {
     }
 
     #clock div {
-        width: 170px;
-        height: 170px;
+        width: 110px;
+        height: 110px;
     }
 
     #clock div span {
-        font-size: 1.7rem;
+        font-size: 1rem;
 
     }
 
     #clock div strong {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .title__modal {
@@ -1118,5 +1154,10 @@ p {
 
     .modal__dialog li {
         font-size: 2rem;
+    }
+
+    
+    .fiesta__inner {
+        padding: 30px;
     }
 }
