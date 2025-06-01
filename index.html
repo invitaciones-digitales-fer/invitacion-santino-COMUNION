@@ -47,44 +47,54 @@
     <!-- ========= Overlay bienvenida ========= -->
     <div id="welcome-overlay" class="welcome__overlay">
         <div class="welcome__content">
-            <h1>Bienvenido</h1>
-            <p>Acompañanos a celebrar la Primera Comunión de <strong>Santino</strong></p>
-            <button id="enter-btn" class="button button--outline button--hover">Entrar</button>
+            <h1 class="fade-in">Te damos la bienvenida a un día especial ✨</h1>
+            <p class="fade-up"><em>Acompañanos a celebrar la Primera Comunión de <strong
+                        class="pop-in santino">Santino</strong></em></p>
+            <button id="enter-btn" class="button button--outline button--hover enter-btn">Entrar</button>
         </div>
     </div>
 
     <!-- ========= Música de fondo ========= -->
     <audio id="bg-music" loop>
-        <source src="assets/music/Canon in D (Pachelbel's Canon).mp" type="audio/mpeg">
+        <source src="assets/music/Canon in D (Pachelbel's Canon).mp3" type="audio/mpeg">
     </audio>
     <button id="music-toggle" class="music__icon-reproductor" aria-label="Música"><img id="music-icon"
             src="assets/icons/icono-musica_play.svg" alt="Play"></button>
 
     <!-- ========= HERO ========= -->
     <header class="hero">
-         <picture>
-        <source srcset="assets/images/hero-horizontal.png" media="(min-width: 768px)">
-        <img src="assets/images/hero-horizontal.png" alt="Camila y Tomás" class="hero__img">
-    </picture>
+        <picture>
+            <source srcset="assets/images/hero-horizontal.png" media="(min-width: 768px)">
+            <img src="assets/images/hero-horizontal.png" alt="Camila y Tomás" class="hero__img">
+        </picture>
         <div class="hero__overlay">
             <img src="assets/images/santino-logo.png" alt="Logo Camila y Tomás" class="hero__logo fade-zoom">
         </div>
         <a href="#frase" class="hero__scroll-down" aria-label="Bajar"></a>
     </header>
 
-    <!-- ========= FRASE ========= -->
-    <section class="frase" id="frase">
-        <div class="frase__container">
-            <img src="assets/icons/heart-internet_26694.png" alt="icon icono-corazon" class="frase__img fade-zoom"
-                width="10">
+   <!-- ========= FRASE ========= -->
+<section class="frase" id="frase">
+  <div class="frase__container">
+    
+    <!-- Animación Lottie: Paloma -->
+    <dotlottie-player
+      src="https://lottie.host/22bdda5f-9091-4c35-a839-c0c6ebe168cf/ou2ZQxd3wN.lottie"
+      background="transparent"
+      speed="1"
+      style="width: 110px; height: 110px"
+      loop
+      autoplay
+      class="frase__icon fade-zoom"
+    ></dotlottie-player>
 
-            <div class="frase__text ">
-                <h4 class="blur-in">Un día lleno de fe</h4>
-                <p>"Que siempre brille en tu corazón la luz de Jesús."</p>
-            </div>
-        </div>
+    <div class="frase__text">
+      <h4 class="blur-in">Un día lleno de fe</h4>
+      <p class="glow-text">"Que siempre brille en tu corazón la luz de Jesús."</p>
+    </div>
 
-    </section>
+  </div>
+</section>
 
     <!-- ========= COUNTDOWN ========= -->
     <section id="countdown" class="section">
@@ -127,7 +137,7 @@
         <div class="rsvp__container">
             <h4 class="section__title section__title-rspv fade-zoom">Confirmar Asistencia</h4>
             <div class="rspv__info fade-down">
-                <p>Tu presencia hará este momento aún más especial para Santino.</p>
+                <p class="glow-text pop-in">Tu presencia hará este momento aún más especial para Santino.</p>
                 <a class="button button--primary button--hover pause-music" target="_blank"
                     href="https://forms.gle/rXmm24d7sacwsgb39">Confirmar asistencia</a>
             </div>
@@ -174,10 +184,10 @@
             </div>
             <br>
 
-           
+
         </div>
     </section>
-   
+
 
     <!-- ========= GALERÍA ========= -->
     <section class="galeria section bg-light">
@@ -186,11 +196,15 @@
                     alt="" class="diary"></h4>
             <p class="galeria__text fade-down">Momentos llenos de amor, fe y alegría.</p>
             <div class="galeria__grid">
-                <button class="gallery__item" type="button"><img src="assets/images/1.jpg" alt="Foto 1"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/2.jpg" alt="Foto 2"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/3.jpg" alt="Foto 3"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/4.jpg" alt="Foto 4"></button>
-                
+                <button class="gallery__item fade-down" type="button"><img src="assets/images/1.jpg"
+                        alt="Foto 1"></button>
+                <button class="gallery__item fade-up" type="button"><img src="assets/images/2.jpg"
+                        alt="Foto 2"></button>
+                <button class="gallery__item fade-left" type="button"><img src="assets/images/3.jpg"
+                        alt="Foto 3"></button>
+                <button class="gallery__item fade-right" type="button"><img src="assets/images/4.jpg"
+                        alt="Foto 4"></button>
+
             </div>
             <!-- Modal de galería -->
             <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog">
@@ -202,13 +216,13 @@
         </div>
     </section>
 
- 
+
 
     <!-- ========= GRACIAS ========= -->
     <section id="gracias" class="section__gracias">
 
         <div id="glitter-container" class="gracias__glitter-container">
-            <p class="section__title section__title--gracias fade-zoom">
+            <p class="section__title section__title--gracias fade-zoom frase__icon">
 
                 ✨ Gracias por acompañarme en este paso tan importante en mi camino de fe ✨
 
@@ -218,6 +232,8 @@
 
     <!-- ========= Scripts ========= -->
     <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
 </body>
 
 </html>
