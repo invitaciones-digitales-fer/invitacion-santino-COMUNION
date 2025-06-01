@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Invitación • Camila & Tomás</title>
+    <title>Invitación • Comunión Santino</title>
 
     <!-- ----- Google Fonts románticas ----- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +25,10 @@
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations-exageradas.css">
 
     <!-- Open Graph / WhatsApp preview -->
-    <meta property="og:title" content="¡Camila & Tomás se casan! 💍" />
+    <meta property="og:title" content="¡Comunión Santino!" />
     <meta property="og:description"
         content="Te invitamos a celebrar nuestro amor. Confirmá tu asistencia desde esta invitación digital." />
     <meta property="og:image" content="https://TU-DOMINIO.com/assets/img/og-camila-tomas.jpg" />
@@ -44,26 +45,29 @@
 <body>
 
     <!-- ========= Overlay bienvenida ========= -->
-    <div id="welcome" class="welcome__overlay">
+    <div id="welcome-overlay" class="welcome__overlay">
         <div class="welcome__content">
             <h1>Bienvenido</h1>
-            <p>Estás invitado a la boda de Camila & Tomás</p>
-            <button id="enter-button" class="button button--outline button--hover">Entrar</button>
+            <p>Acompañanos a celebrar la Primera Comunión de <strong>Santino</strong></p>
+            <button id="enter-btn" class="button button--outline button--hover">Entrar</button>
         </div>
     </div>
 
     <!-- ========= Música de fondo ========= -->
     <audio id="bg-music" loop>
-        <source src="assets/music/Canon in D (Pachelbel's Canon).mp3" type="audio/mpeg">
+        <source src="assets/music/Canon in D (Pachelbel's Canon).mp" type="audio/mpeg">
     </audio>
     <button id="music-toggle" class="music__icon-reproductor" aria-label="Música"><img id="music-icon"
             src="assets/icons/icono-musica_play.svg" alt="Play"></button>
 
     <!-- ========= HERO ========= -->
     <header class="hero">
-        <img src="assets/images/portada.jpg" alt="Camila y Tomás" class="hero__img">
+         <picture>
+        <source srcset="assets/images/hero-horizontal.png" media="(min-width: 768px)">
+        <img src="assets/images/hero-horizontal.png" alt="Camila y Tomás" class="hero__img">
+    </picture>
         <div class="hero__overlay">
-            <img src="assets/images/logo_personal.png" alt="Logo Camila y Tomás" class="hero__logo fade-zoom">
+            <img src="assets/images/santino-logo.png" alt="Logo Camila y Tomás" class="hero__logo fade-zoom">
         </div>
         <a href="#frase" class="hero__scroll-down" aria-label="Bajar"></a>
     </header>
@@ -71,13 +75,12 @@
     <!-- ========= FRASE ========= -->
     <section class="frase" id="frase">
         <div class="frase__container">
-            <img src="assets/icons/heart-internet_26694.png" alt="icon icono-corazon" class="frase__img fade-zoom" width="10" >
+            <img src="assets/icons/heart-internet_26694.png" alt="icon icono-corazon" class="frase__img fade-zoom"
+                width="10">
 
-            <div class="frase__text fade-down">
-                <h4>Nuestro Momento Ha Llegado</h4>
-                <p>"Hay amores que parecen estar escritos en las estrellas."</p>
-                <br>
-                <p><i>William Shakespeare</i></p>
+            <div class="frase__text ">
+                <h4 class="blur-in">Un día lleno de fe</h4>
+                <p>"Que siempre brille en tu corazón la luz de Jesús."</p>
             </div>
         </div>
 
@@ -87,7 +90,7 @@
     <section id="countdown" class="section">
 
         <div id="clock" class="countdown__clock"></div>
-        <img src="assets/icons/wedding-rings.png" alt="icono-boda" class="countdown__img  fade-zoom">
+
         <div class="frase__text">
             <h4 class="fade-zoom">CUENTA REGRESIVA</h4>
         </div>
@@ -97,21 +100,24 @@
     <!-- ========= CEREMONIA & FIESTA ========= -->
     <section id="fiesta" class="section section__ceremonia">
         <div class="fiesta__inner fade-down">
-            <h3 class="section__title section__title--fiesta">Celebración Religiosa</h3>
+
+            <h3 class="section__title section__title--fiesta">Ceremonia de Comunión</h3>
             <p>
-                Sábado 20 de Septiembre – 17:00 hs<br>
-                Iglesia del Carmen | Palermo
+                Domingo 10 de Agosto – 11:00 hs<br>Parroquia Nuestra Señora del Rosario
             </p>
-            <a class="button button--primary button--hover pause-music" target="_blank" href="https://maps.app.goo.gl/kdgQZJ7jHJBeDgxV6">Cómo
+            <a class="button button--primary button--hover pause-music" target="_blank"
+                href="https://maps.app.goo.gl/kdgQZJ7jHJBeDgxV6">Cómo
                 llegar</a>
         </div>
         <div class="fiesta__inner fade-down">
+
             <h3 class="section__title section__title--fiesta">Fiesta de Gala</h3>
             <p>
                 Sábado 20 de Septiembre – 20:00 hs<br>
                 Salón Rosa | Palermo
             </p>
-            <a class="button button--primary button--hover pause-music" target="_blank" href="https://maps.app.goo.gl/bnKoFgJ8cQ3zs9Vm6">Cómo
+            <a class="button button--primary button--hover pause-music" target="_blank"
+                href="https://maps.app.goo.gl/bnKoFgJ8cQ3zs9Vm6">Cómo
                 llegar</a>
         </div>
     </section>
@@ -119,17 +125,18 @@
     <!-- ========= RSVP ========= -->
     <section id="rsvp" class="confirmar-asistencia">
         <div class="rsvp__container">
-            <h4 class="section__title section__title-rspv fade-zoom">Confirmá tu Asistencia</h4>
+            <h4 class="section__title section__title-rspv fade-zoom">Confirmar Asistencia</h4>
             <div class="rspv__info fade-down">
-                <p>Tu presencia hará de este día un recuerdo inolvidable.</p>
+                <p>Tu presencia hará este momento aún más especial para Santino.</p>
                 <a class="button button--primary button--hover pause-music" target="_blank"
                     href="https://forms.gle/rXmm24d7sacwsgb39">Confirmar asistencia</a>
             </div>
-            <img src="assets/icons/calendar.png" alt="icono-calendar" class="icono-img-primary calendar  fade-zoom">
+
             <div class="rspv__calendario fade-down">
                 <p>¡Agendá la fecha en tu calendario!</p>
                 <div class="rsvp__dropdown">
-                    <button id="btnCalendar" class="button button--primary calendar-button pause-music">Agendar evento</button>
+                    <button id="btnCalendar" class="button button--primary calendar-button pause-music">Agendar
+                        evento</button>
                     <ul id="calendarMenu" class="dropdown__menu">
                         <li>
                             <a href="https://calendar.google.com/calendar/render?...">
@@ -166,50 +173,24 @@
 
             </div>
             <br>
-            <img src="assets/icons/wedding-dress.png" alt="icono-dresscode" class="icono-img-primary dresscode  fade-zoom">
-            <div class="dresscode__container fade-down">
-                <h4 class="section__title-dresscode">DRESS CODE:</h4>
-                <p class="dresscode__info">Elegancia formal.
-                    <br>
-                    Al ser al aire libre, te sugerimos calzado cómodo y un abrigo liviano para la noche.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- ========= INSTAGRAM ========= -->
-    <section class="instagram">
-        <div class="instagram__container">
-            <img src="assets/icons/wedding-photos.png" alt="icono-instagram" class="icono-img  fade-zoom camera">
-            
-            <div class="instagram__text fade-down">
-                <h4>
-                    <span class="hashtag">@CamilayTomas</span>
-                </h4>
-                <p>¡Preparate para nuestro casamiento!
-                    <br>
-                    Sumate a cada detalle de nuestra historia en Instagram y compartí tus fotos usando <span class="hashtag">#CamilaYTomás</span>
-                </p>
-                <a class="button button--primary button--hover pause-music" target="_blank" href="https://www.instagram.com/fernandopizarro__/">Ver en
-                    Instagram</a>
 
-            </div>
+           
         </div>
     </section>
+   
 
     <!-- ========= GALERÍA ========= -->
     <section class="galeria section bg-light">
         <div class="galeria__contenedor hidden">
-            <h4 class="galeria__title  fade-zoom">NUESTRA HISTORIA EN IMÁGENES <br><img src="assets/icons/diary.png" alt="" class="diary"></h4>
-            <p class="galeria__text fade-down">Mil instantes que nos llevaron hasta aquí.</p>
+            <h4 class="galeria__title  fade-zoom">Algunos recuerdos especiales<br><img src="assets/icons/diary.png"
+                    alt="" class="diary"></h4>
+            <p class="galeria__text fade-down">Momentos llenos de amor, fe y alegría.</p>
             <div class="galeria__grid">
                 <button class="gallery__item" type="button"><img src="assets/images/1.jpg" alt="Foto 1"></button>
                 <button class="gallery__item" type="button"><img src="assets/images/2.jpg" alt="Foto 2"></button>
                 <button class="gallery__item" type="button"><img src="assets/images/3.jpg" alt="Foto 3"></button>
                 <button class="gallery__item" type="button"><img src="assets/images/4.jpg" alt="Foto 4"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/5.jpg" alt="Foto 5"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/6.jpg" alt="Foto 6"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/7.jpg" alt="Foto 7"></button>
-                <button class="gallery__item" type="button"><img src="assets/images/8.jpg" alt="Foto 8"></button>
+                
             </div>
             <!-- Modal de galería -->
             <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog">
@@ -221,115 +202,16 @@
         </div>
     </section>
 
-    <!-- ========= REGALOS ========= -->
-    <section id="regalos" class="cbu">
-        <div class="cbu__container">
-            <img src="assets/icons/gift.png" alt="icono-regalo" class="icono-img  fade-zoom gift">
-            <div class="cbu__text fade-down">
-                <p>
-                    Tu cariño es nuestro mayor regalo.
-                    <br>
-                    Si deseás colaborar, aquí encontrarás nuestras opciones.
-                </p>
-            </div>
-            <button id="btnGift" class="button--hover">Ver más</button>
-        </div>
-    </section>
-
-    <!-- ========= MODAL REGALO ========= -->
-    <div id="modalRegalo" class="modal modal--regalo">
-        <div class="modal__dialog banco">
-            <span class="modal__close button--hover">&times;</span>
-            <span class="title__modal">Datos Bancarios</span>
-            <ul>
-                <li>Nombre del Titular: Nombre Apellido</li>
-                <li>CBU: 12345623561</li>
-                <li>Alias:</li>
-                <li>DNI: 32200552</li>
-                <li>Banco Galicia</li>
-            </ul>
-            <span class="title__modal">Lista de Regalos</span>
-            <ul>
-                <li><a href="https://novios.falabella.com/" target="_blank" class="pause-music">Falabella Novios</a></li>
-            </ul>
-        </div>
-    </div>
-
-
-    <!-- ========= PLAYLIST ========= -->
-    <section id="playlist" class="playlist">
-        <div class="playlist__card  fade-zoom">
-            <h4 class="playlist__title">¡A BAILAR!</h4>
-            <p class="playlist__text">Queremos que la música sea el reflejo de nuestra alegría. 
-                <br>
-                ¡Sumá tu tema favorito!
-            </p>
-            <a class="button button--outline button--hover pause-music" target="_blank" href="https://forms.gle/fV4XXE9pPn51y9en8">Sugerir canción</a>
-
-        </div>
-    </section>
-
-    <!-- ================ALOJAMIENTOS================== -->
-    <section class="alojamientos">
-        <div class="alojamientos__container">
-            <h4 class="section__title info-util">PLANIFICÁ TU ESTADÍA</h4>
-            <p>
-                Algunas opciones para que disfrutes el fin de semana sin preocupaciones.
-            </p>
-            <button id="btnAlojamientos" class="button button--outline button--hover button--info">Ver más</button>
-        </div>
-    </section>
-
-    <!-- ========= MODAL ALOJAMIENTOS ========= -->
-    <div id="modalAlojamientos" class="modal modal--info">
-        <div class="modal__dialog">
-            <span class="modal__close">&times;</span>
-
-            <span class="title__modal">Hoteles</span>
-            <ul class="modal__list">
-                <li>
-                    <strong>Alojamiento 1</strong><br>
-                    Tel: 11-1234-5678 — Av. Siempre Viva 123<br>
-                    <a href="https://maps.app.goo.gl/aaa" target="_blank" class="pause-music">Cómo llegar</a>
-                </li>
-                <li>
-                    <strong>Alojamiento 2</strong><br>
-                    Tel: 11-8765-4321 — Calle Falsa 456<br>
-                    <a href="https://maps.app.goo.gl/bbb" target="_blank" class="pause-music">Cómo llegar</a>
-                </li>
-                <li>
-                    <strong>Alojamiento 3</strong><br>
-                    Tel: 11-1111-2222 — Pasaje Amor 789<br>
-                    <a href="https://maps.app.goo.gl/ccc" target="_blank" class="pause-music">Cómo llegar</a>
-                </li>
-            </ul>
-
-            <span class="title__modal">Traslados</span>
-            <ul class="modal__list">
-                <li>
-                    <strong>Transporte 1</strong><br>
-                    WhatsApp: 11-7777-8888<a href="https://transporte1.com" target="_blank" class="pause-music"><br>Web</a>
-                </li>
-                <li>
-                    <strong>Transporte 2</strong><br>
-                    WhatsApp: 11-9999-0000<a href="https://transporte2.com" target="_blank" class="pause-music"><br>Web</a>
-                </li>
-                <li>
-                    <strong>Transporte 3</strong><br>
-                    WhatsApp: 11-2222-3333<a href="https://transporte3.com" target="_blank" class="pause-music"><br>Web</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
+ 
 
     <!-- ========= GRACIAS ========= -->
     <section id="gracias" class="section__gracias">
+
         <div id="glitter-container" class="gracias__glitter-container">
             <p class="section__title section__title--gracias fade-zoom">
-                ♥
-                <br>
-                Gracias por ser parte de este capítulo tan especial de nuestras vidas.
+
+                ✨ Gracias por acompañarme en este paso tan importante en mi camino de fe ✨
+
             </p>
         </div>
     </section>

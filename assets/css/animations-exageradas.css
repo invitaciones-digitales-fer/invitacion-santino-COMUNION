@@ -1,0 +1,252 @@
+/* ========== Overlay Bienvenida ========== */
+#welcome-overlay {
+  transition: opacity 1s ease;
+}
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* ========== Fade Animations ========== */
+
+/* Fade Zoom fuerte */
+.fade-zoom {
+  opacity: 0;
+  transform: scale(0.2);
+}
+.fade-zoom.appear {
+  animation: fadeZoom 4s ease-out forwards;
+}
+@keyframes fadeZoom {
+  0%   { opacity: 0; transform: scale(0.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Fade-In */
+.fade-in {
+  opacity: 0;
+}
+.fade-in.appear {
+  animation: fadeIn 2s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Fade-Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.fade-up.appear {
+  animation: fadeUp 1.5s ease-out forwards;
+}
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(100px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-Down */
+.fade-down {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.fade-down.appear {
+  animation: fadeDown 1.5s ease-out forwards;
+}
+@keyframes fadeDown {
+  0%   { opacity: 0; transform: translateY(-100px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-Left */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-150px);
+}
+.fade-left.appear {
+  animation: fadeLeft 1.5s ease-out forwards;
+}
+@keyframes fadeLeft {
+  0%   { opacity: 0; transform: translateX(-150px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade-Right */
+.fade-right {
+  opacity: 0;
+  transform: translateX(150px);
+}
+.fade-right.appear {
+  animation: fadeRight 1.5s ease-out forwards;
+}
+@keyframes fadeRight {
+  0%   { opacity: 0; transform: translateX(150px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+/* ========== Efectos de Movimiento ========== */
+
+/* Pop-In */
+.pop-in {
+  opacity: 0;
+  transform: scale(0.3);
+}
+.pop-in.appear {
+  animation: popIn 2s ease-out forwards;
+}
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.3); }
+  50%  { transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Slide-Up */
+.slide-up {
+  opacity: 0;
+  transform: translateY(150px);
+}
+.slide-up.appear {
+  animation: slideUp 2s ease-out forwards;
+}
+@keyframes slideUp {
+  0%   { opacity: 0; transform: translateY(150px); }
+  80%  { transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Flip-In */
+.flip-in {
+  opacity: 0;
+  transform: rotateY(180deg);
+  transform-origin: left;
+}
+.flip-in.appear {
+  animation: flipIn 1.8s ease-out forwards;
+}
+@keyframes flipIn {
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+/* Bounce-In */
+.bounce-in {
+  opacity: 0;
+  transform: translateY(180px);
+}
+.bounce-in.appear {
+  animation: bounceIn 2s ease-out forwards;
+}
+@keyframes bounceIn {
+  0%   { transform: translateY(180px); opacity: 0; }
+  60%  { transform: translateY(-40px); opacity: 1; }
+  80%  { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Fade con Escala (Zoom-Out) */
+.fade-scale {
+  opacity: 0;
+  transform: scale(2);
+}
+.fade-scale.appear {
+  animation: fadeScale 1.5s ease-out forwards;
+}
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ========== Transformaciones Especiales ========== */
+
+/* Rotate-In */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-360deg) scale(0.3);
+}
+.rotate-in.appear {
+  animation: rotateIn 2s ease-out forwards;
+}
+@keyframes rotateIn {
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Skew-In */
+.skew-in {
+  opacity: 0;
+  transform: skewX(-40deg) translateX(-150px);
+}
+.skew-in.appear {
+  animation: skewIn 1.5s ease-out forwards;
+}
+@keyframes skewIn {
+  to {
+    opacity: 1;
+    transform: skewX(0) translateX(0);
+  }
+}
+
+/* Blur-In Reveal */
+.blur-in {
+  filter: blur(18px);
+  opacity: 0;
+  transform: translateY(100px);
+}
+.blur-in.appear {
+  animation: blurIn 1.8s ease-out forwards;
+}
+@keyframes blurIn {
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========== Typewriter Efectos ========== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  animation:
+    typing 2.5s steps(30, end) forwards,
+    blink 0.75s step-end infinite;
+  width: 0;
+}
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+.typewriter-loop {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: typingLoop 3s steps(30, end) infinite,
+             blink 0.75s step-end infinite;
+}
+@keyframes typingLoop {
+  0%   { width: 0; }
+  50%  { width: 100%; }
+  80%  { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+

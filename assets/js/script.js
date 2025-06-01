@@ -1,222 +1,174 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ====== Countdown ====== */
-const clock = document.getElementById('clock');
-const eventDate = new Date('december 9, 2025 21:30:00').getTime();
-const pad = n => n.toString().padStart(2, '0');
+  /* ========= 1. COUNTDOWN ========= */
+  const clock = document.getElementById("clock");
+  const eventDate = new Date("August 10, 2025 11:00:00").getTime();
+  const pad = n => n.toString().padStart(2, "0");
 
-function updateClock() {
-  const gap = eventDate - Date.now();
-  const d = Math.floor(gap / 864e5);
-  const h = Math.floor(gap / 36e5) % 24;
-  const m = Math.floor(gap / 6e4) % 60;
-  const s = Math.floor(gap / 1e3) % 60;
+  function updateClock() {
+    const gap = eventDate - Date.now();
+    const d = Math.floor(gap / 864e5);
+    const h = Math.floor(gap / 36e5) % 24;
+    const m = Math.floor(gap / 6e4) % 60;
+    const s = Math.floor(gap / 1e3) % 60;
 
-  clock.innerHTML = `
-    <div><strong>${pad(d)}</strong><span>días</span></div>
-    <div><strong>${pad(h)}</strong><span>horas</span></div>
-    <div><strong>${pad(m)}</strong><span>min</span></div>
-    <div><strong>${pad(s)}</strong><span>seg</span></div>`;
-}
+    clock.innerHTML = `
+      <div><strong>${pad(d)}</strong><span>días</span></div>
+      <div><strong>${pad(h)}</strong><span>horas</span></div>
+      <div><strong>${pad(m)}</strong><span>min</span></div>
+      <div><strong>${pad(s)}</strong><span>seg</span></div>`;
+  }
 
-setInterval(updateClock, 1000); updateClock();
+  setInterval(updateClock, 1000);
+  updateClock();
 
-/* ====== Modal ====== */
-const btnGift = document.getElementById('btnGift');
-const modal = document.getElementById('modalRegalo');
-const close = modal.querySelector('.modal__close');
 
-btnGift.onclick = () => modal.style.display = 'flex';
-close.onclick = () => modal.style.display = 'none';
-window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+  /* ========= 2. OVERLAY + MÚSICA ========= */
+  const music      = document.getElementById("bg-music");
+  const overlay    = document.getElementById("welcome-overlay");
+  const enterBtn   = document.getElementById("enter-btn");
+  const toggle     = document.getElementById("music-toggle");
+  const toggleIcon = document.getElementById("music-icon");
+  let isPlaying    = false;
 
-/* ====== Scroll reveal para .fade-zoom ====== */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
+  const updateMusicIcon = () => {
+    toggle.classList.remove("playing", "pulsing");
+    if (isPlaying) {
+      toggleIcon.src = "assets/icons/icono-musica_stop.svg";
+      toggle.classList.add("playing");
+    } else {
+      toggleIcon.src = "assets/icons/icono-musica_play.svg";
+      toggle.classList.add("pulsing");
     }
-  });
-}, { threshold: 0.2 });
+  };
 
-document.querySelectorAll('.fade-zoom').forEach(el => {
-  observer.observe(el);
-});
-document.querySelectorAll('.fade-zoom, .fade-down').forEach(el => {
-  observer.observe(el);
-});
+  enterBtn?.addEventListener("click", () => {
+    overlay.classList.add("fade-out");
+    setTimeout(() => overlay.style.display = "none", 1000);
 
-
-
-
-// ======= const music = document.getElementById('bg-music');
-const music = document.getElementById('bg-music');
-const enterBtn = document.getElementById('enter-button');
-const overlay = document.getElementById('welcome');
-const toggle = document.getElementById('music-toggle');
-const toggleIcon = document.getElementById('music-icon');
-let isPlaying = false;
-
-// Cambia la imagen del ícono según el estado
-function updateMusicIcon() {
-  toggle.classList.remove('playing', 'pulsing'); // limpia ambas
-
-  if (isPlaying) {
-    toggleIcon.src = 'assets/icons/icono-musica_stop.svg';
-    toggleIcon.alt = 'Pause';
-    toggle.classList.add('playing'); // 🎵 animación de salto
-  } else {
-    toggleIcon.src = 'assets/icons/icono-musica_play.svg';
-    toggleIcon.alt = 'Play';
-    toggle.classList.add('pulsing'); // ⏸️ animación de pulso suave
-  }
-}
-
-
-// Al hacer clic en "Entrar"
-enterBtn.addEventListener('click', () => {
-  overlay.classList.add('fade-out');
-  setTimeout(() => {
-    overlay.style.display = 'none';
-  }, 1000);
-
-  if (music) {
-    music.volume = 1;
+    music.volume = 0.6;
     music.play().then(() => {
       isPlaying = true;
-    }).catch(err => {
-      console.log('Autoplay bloqueado:', err);
-      isPlaying = false;
-    }).finally(() => {
-      updateMusicIcon(); // <- SIEMPRE actualiza el ícono
-    });
-  }
-});
-
-// Al hacer clic en el botón de música
-toggle.addEventListener('click', () => {
-  if (isPlaying) {
-    music.pause();
-    isPlaying = false;
-    updateMusicIcon();
-  } else {
-    music.play().then(() => {
-      isPlaying = true;
-    }).catch(err => {
-      console.log('Error al reproducir música manual:', err);
-      isPlaying = false;
-    }).finally(() => {
-      updateMusicIcon(); // <- SIEMPRE actualiza el ícono
-    });
-  }
-});
-
-document.querySelectorAll('.pause-music').forEach(link => {
-  link.addEventListener('click', () => {
-    if (!music.paused) {
-      music.pause();
-      isPlaying = false;
       updateMusicIcon();
-    }
+    }).catch(() => console.warn("Autoplay bloqueado"));
   });
-});
 
-
-
-
-/* ====== Galería modal ====== */
-/* -------------- GALERÍA -------------- */
-const galleryItems = document.querySelectorAll('.gallery__item');
-const galleryModal = document.getElementById('galleryModal');
-if (galleryItems.length && galleryModal) {
-  const galleryImg = galleryModal.querySelector('.gallery-modal__img');
-  const btnCloseGal = galleryModal.querySelector('.gallery-modal__close');
-  const btnPrev = galleryModal.querySelector('.gallery-modal__prev');
-  const btnNext = galleryModal.querySelector('.gallery-modal__next');
-
-  let current = 0;
-
-  const updateImg = () => {
-    const pic = galleryItems[current].querySelector('img');
-    galleryImg.src = pic.src;
-    galleryImg.alt = pic.alt;
-  };
-
-  const openGal = i => {
-    current = i;
-    updateImg();
-    galleryModal.classList.add('gallery-modal--active');
-    document.body.style.overflow = 'hidden';
-  };
-  const closeGal = () => {
-    galleryModal.classList.remove('gallery-modal--active');
-    document.body.style.overflow = '';
-  };
-
-  galleryItems.forEach((btn, i) => btn.addEventListener('click', () => openGal(i)));
-  btnCloseGal.addEventListener('click', closeGal);
-  btnPrev.addEventListener('click', () => { current = (current - 1 + galleryItems.length) % galleryItems.length; updateImg(); });
-  btnNext.addEventListener('click', () => { current = (current + 1) % galleryItems.length; updateImg(); });
-
-  /* cerrar con ESC o clic fuera */
-  window.addEventListener('keydown', e => {
-    if (!galleryModal.classList.contains('gallery-modal--active')) return;
-    if (e.key === 'Escape') closeGal();
-    if (e.key === 'ArrowLeft') btnPrev.click();
-    if (e.key === 'ArrowRight') btnNext.click();
+  toggle?.addEventListener("click", () => {
+    isPlaying ? music.pause() : music.play();
+    isPlaying = !isPlaying;
+    updateMusicIcon();
   });
-  galleryModal.addEventListener('click', e => {
-    if (e.target === galleryModal) closeGal();
-  });
-}
-
-/* -------------- DROPDOWN CALENDARIO -------------- */
-const btnCalendar = document.getElementById('btnCalendar');
-const calendarMenu = document.getElementById('calendarMenu');
-
-if (btnCalendar && calendarMenu) {
-  btnCalendar.addEventListener('click', () => {
-    const isOpen = calendarMenu.style.display === 'flex';
-
-    // Toggle display
-    calendarMenu.style.display = isOpen ? 'none' : 'flex';
-
-    // Toggle class to change style
-    btnCalendar.classList.toggle('open', !isOpen);
-  });
-}
 
 
-/* -------------- MODAL ALOJAMIENTOS -------------- */
-const btnAloja = document.getElementById('btnAlojamientos');
-const modalAlo = document.getElementById('modalAlojamientos');
-if (btnAloja && modalAlo) {
-  const closeAlo = modalAlo.querySelector('.modal__close');
-  btnAloja.onclick = () => modalAlo.style.display = 'flex';
-  closeAlo.onclick = () => modalAlo.style.display = 'none';
-  window.addEventListener('click', e => { if (e.target === modalAlo) modalAlo.style.display = 'none'; });
-}
+  /* ========= 3. MODAL REGALO ========= */
+  const btnGift   = document.getElementById("btnGift");
+  const modalReg  = document.getElementById("modalRegalo");
+  const closeGift = modalReg?.querySelector(".modal__close");
+
+  btnGift?.addEventListener("click", () => modalReg.style.display = "flex");
+  closeGift?.addEventListener("click", () => modalReg.style.display = "none");
+  window.addEventListener("click", e => { if (e.target === modalReg) modalReg.style.display = "none"; });
 
 
-/* ====== Dropdown Calendario ====== */
-// (Eliminado código duplicado de btnCalendar y calendarMenu)
+  /* ========= 4. GALERÍA MODAL ========= */
+  const galleryModal = document.getElementById("galleryModal");
+  if (galleryModal) {
+    const galleryItems = document.querySelectorAll(".gallery__item");
+    const galleryImg   = galleryModal.querySelector(".gallery-modal__img");
+    const btnPrev      = galleryModal.querySelector(".gallery-modal__prev");
+    const btnNext      = galleryModal.querySelector(".gallery-modal__next");
+    const btnCloseGal  = galleryModal.querySelector(".gallery-modal__close");
+    let current = 0;
 
+    const updateImg = () => {
+      const img = galleryItems[current].querySelector("img");
+      galleryImg.src = img.src;
+      galleryImg.alt = img.alt;
+    };
 
-/* ====== Modal Alojamientos ====== */
-const btnAlojamientos = document.getElementById('btnAlojamientos');
-const modalAlojamientos = document.getElementById('modalAlojamientos');
+    const openGal = i => {
+      current = i;
+      updateImg();
+      galleryModal.classList.add("gallery-modal--active");
+      document.body.style.overflow = "hidden";
+    };
 
-btnAlojamientos.onclick = () => modalAlojamientos.style.display = 'flex';
-modalAlojamientos.querySelector('.modal__close').onclick = () => modalAlojamientos.style.display = 'none';
+    const closeGal = () => {
+      galleryModal.classList.remove("gallery-modal--active");
+      document.body.style.overflow = "";
+    };
 
-window.addEventListener('click', e => {
-  if (e.target === modalAlojamientos) {
-    modalAlojamientos.style.display = 'none';
+    galleryItems.forEach((btn, i) => btn.addEventListener("click", () => openGal(i)));
+    btnPrev?.addEventListener("click", () => { current = (current - 1 + galleryItems.length) % galleryItems.length; updateImg(); });
+    btnNext?.addEventListener("click", () => { current = (current + 1) % galleryItems.length; updateImg(); });
+    btnCloseGal?.addEventListener("click", closeGal);
+    window.addEventListener("keydown", e => {
+      if (!galleryModal.classList.contains("gallery-modal--active")) return;
+      if (e.key === "Escape") closeGal();
+      if (e.key === "ArrowLeft") btnPrev?.click();
+      if (e.key === "ArrowRight") btnNext?.click();
+    });
+    galleryModal.addEventListener("click", e => { if (e.target === galleryModal) closeGal(); });
   }
+
+
+  /* ========= 5. DROPDOWN CALENDARIO ========= */
+  const btnCalendar  = document.getElementById("btnCalendar");
+  const calendarMenu = document.getElementById("calendarMenu");
+
+  btnCalendar?.addEventListener("click", () => {
+    const isOpen = calendarMenu.style.display === "flex";
+    calendarMenu.style.display = isOpen ? "none" : "flex";
+    btnCalendar.classList.toggle("open", !isOpen);
+  });
+
+
+  /* ========= 6. SCROLL ANIMATIONS ========= */
+  const animClasses = [
+    ".fade-up", ".fade-down", ".fade-left", ".fade-right",
+    ".fade-zoom", ".pop-in", ".fade-in", ".slide-up",
+    ".flip-in", ".bounce-in", ".fade-scale",
+    ".rotate-in", ".skew-in", ".blur-in",
+    ".typewriter", ".typewriter-loop", ".typewriter-rotator"
+  ];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("appear");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll(animClasses.join(",")).forEach(el => observer.observe(el));
+
+
+  /* ========= 7. TYPEWRITER ROTADOR ========= */
+  const rotator = document.getElementById("rotator-text");
+  if (rotator) {
+    const frases = ["¡Bienvenido!"];
+    let i = 0, j = 0, borrando = false;
+
+    function typeLoop() {
+      const current = frases[i];
+      const visible = current.slice(0, j);
+      rotator.textContent = visible;
+
+      if (!borrando && j < current.length) {
+        j++;
+        setTimeout(typeLoop, 100);
+      } else if (borrando && j > 0) {
+        j--;
+        setTimeout(typeLoop, 60);
+      } else {
+        borrando = !borrando;
+        if (!borrando) i = (i + 1) % frases.length;
+        setTimeout(typeLoop, 1000);
+      }
+    }
+
+    typeLoop();
+  }
+
 });
-
-// ===============Agendar evento===================
-
-// (Eliminado código duplicado de btnCalendar y calendarMenu)
-
-
